@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\cvController;
+use App\Http\Controllers\formController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,8 @@ Route::get('/education',[cvController::class,'education']);
 Route::get('/project',[cvController::class,'project']);
 Route::get('/contact',[cvController::class,'contact']);
 Route::get('/refrence',[cvController::class,'refrence']);
+Route:: get('/add',[formController::class,'addReg']);
 
-Route:: post('/add',[formController::class,'addsubmit'])->name('add.submit');
+Route:: post('/add',[formController::class,'add'])->name('add.submit');
 
 

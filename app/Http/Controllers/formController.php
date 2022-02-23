@@ -8,18 +8,23 @@ use App\Models\form;
 class formController extends Controller
 {
     //
+    public function addreg()
+    {
+        return view ('form.add');
+    }
     public function add(Request $req)
     {
 
         $req->validate(
             [
-            'Name'=>'requird|regex:/^[A-Z a-z]+$/',
-            'Id'=>'required',
-            'Cgpa'=>'required',
-            'Gender'=>'required',
-            'Hobbies'=>'required',
-            'Date of birth'=>'required'
+            'name'=>'required|regex:/^[A-Z a-z]+$/',
+            'id'=>'required|max:10',
+            'cgpa'=>'required|numeric|min:0.0|max:4.0',
+            'gender'=>'required',
+            'hobby'=>'required',
+            'dob'=>'required|date|before:2004-01-01'
             ]
             );
+            return 'hii';
     }
 }
